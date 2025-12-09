@@ -1,0 +1,1 @@
+This is a stealth chat app designed for fun purposes only. It has 5 layers of password protection and is used to chat among friends while showcasing ChatGPT like UI/UX to add extra stealth features in it.
