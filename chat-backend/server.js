@@ -42,7 +42,7 @@ app.use("/uploads", express.static(uploadDir));
 
 
 // ✅ CONNECT TO MONGODB
-mongoose.connect("mongodb+srv://HDAdmin:password%40HD@hd.rfiamkt.mongodb.net/HD", {
+mongoose.connect("mongodb+srv://id:password@hd.rfiamkt.mongodb.net/HD", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log("✅ MongoDB Connected"))
@@ -187,7 +187,7 @@ app.get("/history/:u1/:u2", async (req, res) => {
 app.post("/upload", upload.single("file"), (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No file uploaded" });
 
-const baseURL = process.env.BASE_URL || "https://chat-backend-deploy.onrender.com";
+const baseURL = process.env.BASE_URL || "https://your_hosted_app.com";
 
   res.json({
     fileUrl: `${baseURL}/uploads/${req.file.filename}`,
@@ -202,4 +202,5 @@ const baseURL = process.env.BASE_URL || "https://chat-backend-deploy.onrender.co
 server.listen(PORT, () => {
   console.log(`🚀 Chat Backend Running on Port: ${PORT}`);
 });
+
 
